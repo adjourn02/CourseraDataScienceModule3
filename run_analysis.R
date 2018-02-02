@@ -63,8 +63,8 @@ colnames(aveData)[3:length(aveData)] <- as.character(features$V2)
 
 ## 2. Extract only the mean and standard deviation for each measurement
 ## get row indices where the mean and standard deviation are measured 
-meanIdx <- grep("mean",features$V2)+2 ## added offset to accommodate binded subject and activity column
-stdIdx <- grep("std",features$V2)+2 ## added offset to accommodate binded subject and activity column
+meanIdx <- grep("mean()",features$V2)+2 ## added offset to accommodate binded subject and activity column
+stdIdx <- grep("std()",features$V2)+2 ## added offset to accommodate binded subject and activity column
 idx <- sort(c(meanIdx,stdIdx))
 ## extract mean and standard deviation from the dataset in (1)
 meanStd <- aveData[,c(1,2,idx)]
